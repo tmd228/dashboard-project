@@ -1,6 +1,7 @@
 import './App.css'
 // import ChartCard from './components/ChartCard/ChartCard'
 import Navbar from './components/Navbar/Navbar'
+import Sidebar from './components/Sidebar/Sidebar'
 // import Sidebar from './components/Sidebar/Sidebar'
 import Dashboard from './pages/Dashboard/Dashboard'
 import NotFound from './pages/NotFound/NotFound'
@@ -9,13 +10,16 @@ import { Route, Routes } from 'react-router-dom'
 
 function App() {
 
-  return (<div>
-    <Navbar />
-    <Routes>
-      <Route path='/' element={<h1>home page</h1>} />
-      <Route path='/dashboard' element={<Dashboard />} />
-      <Route path='/settings' element={<Settings />} />
-    </Routes>
+  return (<div className='appContainer'>
+    <Sidebar />
+    <div className='mainContent'>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<h1>home page</h1>} />
+        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/settings' element={<Settings />} />
+      </Routes>
+    </div>
   </div>
   )
 }
